@@ -18,7 +18,7 @@ class LoginPage extends Component {
   }
 }
 
-LoginForm.propTypes = {
+LoginPage.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired
   }).isRequired,

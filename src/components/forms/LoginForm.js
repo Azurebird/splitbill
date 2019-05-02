@@ -24,7 +24,7 @@ class LoginForm extends Component {
     const errors = this.validate(this.state.data);
     this.setState({ errors });
     if (_.isEmpty(errors)) {
-      this.props.submit(this.state.data);
+      this.props.submit(this.state.data).catch(errors => console.log(errors));
     }
   };
 
