@@ -4,7 +4,7 @@ import Validator from "validator";
 import InLineError from "../messages/InLineError";
 import _ from "lodash";
 import PropTypes from "prop-types";
-
+/** @deprecated */
 class LoginForm extends Component {
   state = {
     data: {

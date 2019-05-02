@@ -1,5 +1,6 @@
 import axios from "axios";
 
+/** @deprecated */
 export default {
   user: {
     login: credentials =>
