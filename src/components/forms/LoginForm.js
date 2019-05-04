@@ -20,16 +20,16 @@ class LoginForm extends Component {
       data: { ...this.state.data, [e.target.name]: e.target.value }
     });
 
-  onSubmit = () => {
+  onSubmit = async () => {
     const errors = this.validate(this.state.data);
     this.setState({ errors });
     if (_.isEmpty(errors)) {
       this.setState({ loading: true });
-      this.props
-        .submit(this.state.data)
-        .catch(error =>
-          this.setState({ errors: error.response.data.errors, loading: false })
-        );
+      try {
+        await this.props.submit(this.state.data);
+      } catch (error) {
+        this.setState({ errors: error.response.data.errors, loading: false });
+      }
     }
   };
 

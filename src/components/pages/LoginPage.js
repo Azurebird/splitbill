@@ -6,8 +6,10 @@ import { login } from "../../actions/login";
 
 /** @deprecated */
 class LoginPage extends Component {
-  submit = data =>
-    this.props.login(data).then(() => this.props.history.push("/"));
+  submit = async data => {
+    await this.props.login(data);
+    this.props.history.push("/");
+  };
 
   render() {
     return (

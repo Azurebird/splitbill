@@ -3,9 +3,9 @@ import axios from "axios";
 /** @deprecated */
 export default {
   user: {
-    login: credentials =>
-      axios
-        .post("/api/profile/login", { credentials })
-        .then(response => response.data.user)
+    login: async credentials => {
+      const response = await axios.post("/api/profile/login", { credentials });
+      return response.data.user;
+    }
   }
 };
