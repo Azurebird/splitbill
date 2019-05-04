@@ -1,8 +1,6 @@
-import React from "react";
+import React from 'react';
 
 /** @deprecated */
-const DashboardPage = () => {
-  return <div />;
-};
+const DashboardPage = () => <div>This is the dashboard</div>;
 
 export default DashboardPage;

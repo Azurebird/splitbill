@@ -1,14 +1,14 @@
-import LoginForm from "../forms/LoginForm";
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { login } from "../../actions/login";
+import LoginForm from '../forms/LoginForm';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { login } from '../../actions/login';
 
 /** @deprecated */
 class LoginPage extends Component {
   submit = async data => {
     await this.props.login(data);
-    this.props.history.push("/");
+    this.props.history.push('/dashboard');
   };
 
   render() {
