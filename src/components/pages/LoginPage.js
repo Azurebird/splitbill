@@ -7,7 +7,7 @@ import { login } from "../../actions/login";
 /** @deprecated */
 class LoginPage extends Component {
   submit = data =>
-    this.props.login(data).then(() => this.props.history.push("/dashboard"));
+    this.props.login(data).then(() => this.props.history.push("/"));
 
   render() {
     return (
