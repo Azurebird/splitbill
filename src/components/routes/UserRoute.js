@@ -21,7 +21,7 @@ const mapStateToProps = state => {
 };
 
 UserRoute.propTypes = {
-  component: PropTypes.func.isRequired,
+  component: PropTypes.object.isRequired,
   isAuthenticated: PropTypes.bool.isRequired
 };
 
