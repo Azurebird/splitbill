@@ -1,15 +1,16 @@
-import React, { Component } from "react";
-import { Form, Button, Message } from "semantic-ui-react";
-import Validator from "validator";
-import InLineError from "../messages/InLineError";
-import _ from "lodash";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import { Form, Button, Message } from 'semantic-ui-react';
+import Validator from 'validator';
+import InLineError from '../messages/InLineError';
+import _ from 'lodash';
+import PropTypes from 'prop-types';
+
 /** @deprecated */
 class LoginForm extends Component {
   state = {
     data: {
-      email: "",
-      password: ""
+      email: '',
+      password: ''
     },
     loading: false,
     errors: {}
@@ -35,8 +36,8 @@ class LoginForm extends Component {
 
   validate = data => {
     const errors = {};
-    if (!Validator.isEmail(data.email)) errors.email = "Invalid email";
-    if (!data.password) errors.password = "The password is missing";
+    if (!Validator.isEmail(data.email)) errors.email = 'Invalid email';
+    if (!data.password) errors.password = 'The password is missing';
     return errors;
   };
 
