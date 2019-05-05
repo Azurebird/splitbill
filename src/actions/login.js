@@ -20,3 +20,9 @@ export const logout = () => dispatch => {
   localStorage.removeItem('loggedUser');
   return dispatch(userLoggedOut());
 };
+
+export const signUp = credentials => async dispatch => {
+  const user = await api.user.signUp(credentials);
+  localStorage.loggedUser = user.token;
+  return dispatch(userLoggedIn(user));
+};
