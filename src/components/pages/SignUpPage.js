@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { signUp } from '../../actions/login';
 
-/** @deprecated */
 class SignUpPage extends Component {
   signUp = async data => {
     await this.props.signUp(data);
@@ -14,7 +13,7 @@ class SignUpPage extends Component {
   render() {
     return (
       <div>
-        <h1>Sign Up Page</h1>
+        <h1>SignUp Page</h1>
         <SignUpForm signUp={this.signUp} />
       </div>
     );

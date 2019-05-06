@@ -1,8 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Container, Button, Icon } from 'semantic-ui-react';
 
 /** @deprecated */
-const DashboardPage = () => <div>This is the dashboard</div>;
+const DashboardPage = () => (
+  <Container textAlign="center">
+    <Button position="center">
+      <Icon name="add circle" /> Adicionar grupo
+    </Button>
+  </Container>
+);
 
 export default connect(
   null,
