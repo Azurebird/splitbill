@@ -5,7 +5,8 @@ import { Menu } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const Header = ({ isAuthenticated, logout }) => (
-  <Menu name="DashBoard">
+  <Menu>
+    <Menu.Item header>Split Bills</Menu.Item>
     <Menu.Menu position="right">
       {isAuthenticated ? (
         <Menu.Item name="logout" onClick={logout} />
