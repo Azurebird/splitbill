@@ -6,9 +6,11 @@ import SignUpPage from './components/pages/SignUpPage';
 import DashboardPage from './components/pages/DashboardPage';
 import UserRoute from './components/routes/UserRoute';
 import GuestRoute from './components/routes/GuestRoute';
+import Header from './components/header/Header';
 
 const App = () => (
   <div className="ui container">
+    <Header />
     <Route path="/" exact component={HomePage} />
     <GuestRoute path="/login" exact component={LoginPage} />
     <GuestRoute path="/signup" exact component={SignUpPage} />
