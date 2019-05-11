@@ -11,5 +11,15 @@ export default {
       const response = await axios.post('/api/profile/', { credentials });
       return response.data.user;
     }
+  },
+  categories: {
+    load: async credentials => {
+      const categories = [
+        { name: 'Familia' },
+        { name: 'Mosa' },
+        { name: 'Hermano' }
+      ];
+      return categories;
+    }
   }
 };
