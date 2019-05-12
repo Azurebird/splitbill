@@ -9,7 +9,7 @@ import App from './routes';
 import rootReducer from './reducer';
 import 'semantic-ui-css/semantic.min.css';
 import { userLoggedIn } from './actions/login';
-import { load } from './actions/categories';
+import { load } from './actions/groups';
 
 const store = createStore(
   rootReducer,

@@ -1,6 +1,10 @@
 import axios from 'axios';
+import { getUserToken } from './auth/auth';
 
-/** @deprecated */
+const getAuthorizationHeader = () => ({
+  Authorization: `Bearer ${getUserToken()}`
+});
+
 export default {
   user: {
     login: async credentials => {
@@ -12,14 +16,18 @@ export default {
       return response.data.user;
     }
   },
-  categories: {
-    load: async credentials => {
-      const categories = [
-        { name: 'Familia' },
-        { name: 'Mosa' },
-        { name: 'Hermano' }
-      ];
-      return categories;
+  groups: {
+    load: async () => {
+      const response = await axios.get('/api/groups/', {
+        headers: { ...getAuthorizationHeader() }
+      });
+      return response.data.groups;
+    },
+    history: async groupId => {
+      const response = await axios.get(`/api/groups/${groupId}`, {
+        headers: { ...getAuthorizationHeader() }
+      });
+      return response.data.groups;
     }
   }
 };

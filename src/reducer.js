@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import user from './reducers/user';
-import categories from './reducers/categories';
+import groups from './reducers/groups';
 
 export default combineReducers({
   user,
-  categories
+  groups
 });
