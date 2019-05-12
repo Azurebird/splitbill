@@ -2,7 +2,7 @@ import SignUpForm from '../forms/SignUpForm';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { signUp } from '../../actions/login';
+import { signUp } from '../../actions/login.action';
 
 class SignUpPage extends Component {
   signUp = async data => {

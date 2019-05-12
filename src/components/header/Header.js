@@ -1,5 +1,5 @@
 import React from 'react';
-import { logout } from '../../actions/login';
+import { logout } from '../../actions/login.action';
 import { connect } from 'react-redux';
 import { Menu } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';

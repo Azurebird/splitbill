@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Button, Icon } from 'semantic-ui-react';
 import { Item } from 'semantic-ui-react';
-import { getGroupHistory } from '../../actions/groups';
+import { getGroupHistory } from '../../actions/groups.action';
 
 class DashboardPage extends Component {
   onClick = groupId => async () => {

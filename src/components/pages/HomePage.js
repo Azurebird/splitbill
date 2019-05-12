@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { logout } from '../../actions/login';
+import { logout } from '../../actions/login.action';
 
 const HomePage = () => (
   <div>

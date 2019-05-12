@@ -8,8 +8,8 @@ import thunk from 'redux-thunk';
 import App from './routes';
 import rootReducer from './reducer';
 import 'semantic-ui-css/semantic.min.css';
-import { userLoggedIn } from './actions/login';
-import { load } from './actions/groups';
+import { userLoggedIn } from './actions/login.action';
+import { load } from './actions/groups.action';
 
 const store = createStore(
   rootReducer,
