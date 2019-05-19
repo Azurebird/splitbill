@@ -12,7 +12,7 @@ import GroupPage from './components/pages/GroupPage';
 const App = () => (
   <div className="ui container">
     <Header />
-    <Route path="/" exact component={HomePage} />
+    <GuestRoute path="/" exact component={HomePage} />
     <GuestRoute path="/login" exact component={LoginPage} />
     <GuestRoute path="/signup" exact component={SignUpPage} />
     <UserRoute path="/dashboard" exact component={DashboardPage} />
