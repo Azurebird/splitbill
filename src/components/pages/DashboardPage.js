@@ -2,12 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Button, Icon, Form } from 'semantic-ui-react';
 import { Item } from 'semantic-ui-react';
-import { getGroupHistory } from '../../actions/groups.action';
+import { getGroupHistory, create } from '../../actions/groups.action';
 
 class DashboardPage extends Component {
   state = {
-    adding: true
+    data: {
+      groupName: ''
+    },
+    adding: false
   };
+
+  onChange = e =>
+    this.setState({
+      data: { ...this.state.data, [e.target.name]: e.target.value }
+    });
 
   enableAdd = () => {
     this.setState({ adding: true });
@@ -18,7 +26,10 @@ class DashboardPage extends Component {
     this.props.history.push('/group');
   };
 
-  onGroupCreate = name => async () => {};
+  onGroupCreate = async () => {
+    const name = this.state.data.groupName;
+    await this.props.create(name);
+  };
 
   render() {
     return (
@@ -37,14 +48,22 @@ class DashboardPage extends Component {
           ))}
         </Item.Group>
         {this.state.adding && (
-          <Form.Field>
-            <div class="ui action input">
-              <input type="text" id="groupName" placeholder="" />
-              <Button class="ui button">Add</Button>
-            </div>
-          </Form.Field>
+          <Form onSubmit={this.onGroupCreate}>
+            <Form.Field>
+              <div className="ui action input">
+                <input
+                  type="text"
+                  id="groupName"
+                  name="groupName"
+                  placeholder="Group Name"
+                  onChange={this.onChange}
+                />
+                <Button className="ui button">Add</Button>
+              </div>
+            </Form.Field>
+          </Form>
         )}
-        <div class="field">
+        <div className="field">
           <Button position="center" onClick={this.enableAdd}>
             <Icon name="add circle" /> Adicionar grupo
           </Button>
@@ -62,5 +81,5 @@ const mapState = state => {
 
 export default connect(
   mapState,
-  { getGroupHistory }
+  { getGroupHistory, create }
 )(DashboardPage);

@@ -17,6 +17,14 @@ export default {
     }
   },
   groups: {
+    create: async name => {
+      const response = await axios.post(
+        '/api/groups/',
+        { name },
+        { headers: { ...getAuthorizationHeader() } }
+      );
+      return response.data.group;
+    },
     load: async () => {
       const response = await axios.get('/api/groups/', {
         headers: { ...getAuthorizationHeader() }
